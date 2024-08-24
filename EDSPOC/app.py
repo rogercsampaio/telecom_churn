@@ -13,7 +13,8 @@ try:
     # Será usada para tratamento de algumas variáveis
     previsoes = pd.read_csv("bases/cli_contratos_previsoes_final.csv")
 except Exception as excecao:
-    st.markdown("Erro ao carregar a base de dados")
+    st.markdown(excecao)
+    #st.markdown("Erro ao carregar a base de dados")
     st.markdown("Não é possível prosseguir com a aplicação. Contrate o administrador.")
 else:
     st.markdown("Base de dados carregada.")
