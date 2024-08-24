@@ -8,10 +8,10 @@ st.title("Telecom CHURN")
 st.info('Objetivo: prever a rotatividade(probabilidade de cancelar o contrato) de um cliente na operadora utilizando dados históricos de custos de ligações efetuadas no período, total de ligações ao call center,estado,código de área entre outras informações.',icon="ℹ️")
 # Carregando bases de dados principais
 try:
-    cli_contratos_abt = pd.read_csv("bases/abt_contratos_clientes.csv")
+    cli_contratos_abt = pd.read_csv("../bases/abt_contratos_clientes.csv")
 
     # Será usada para tratamento de algumas variáveis
-    previsoes = pd.read_csv("bases/cli_contratos_previsoes_final.csv")
+    previsoes = pd.read_csv("../bases/cli_contratos_previsoes_final.csv")
 except Exception as excecao:
     st.markdown(excecao)
     #st.markdown("Erro ao carregar a base de dados")
@@ -21,7 +21,7 @@ else:
     
     # Carregando modelo preditivo
     try:
-        with open('code/modelagem/random_forest_modelo_v1.pkl', 'rb') as f:
+        with open('../code/modelagem/random_forest_modelo_v1.pkl', 'rb') as f:
             random_forest_modelo_carregado = pickle.load(f)
     except Exception as excecao:
         st.markdown(excecao)
